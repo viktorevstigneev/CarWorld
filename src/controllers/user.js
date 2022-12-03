@@ -16,10 +16,12 @@ const handleAddUser = async (req, res) => {
 const handleGetCurrentUser = async (req, res) => {
 	try {
 		const result = await getUser(req.session.passport.user || '');
+		console.log('req.session.passport.user: ', req.session.passport.user);
+		console.log('result: ', result);
 
 		res.status(HttpStatusCode.OK).send(result);
 	} catch (error) {
-		res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).send({ error });
+		res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).send(error);
 	}
 };
 
