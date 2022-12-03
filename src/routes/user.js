@@ -38,7 +38,7 @@ const router = express();
 // router.use(multer({ dest: 'uploads' }).single('filedata'));
 const type = upload.single('avatar');
 
-router.get('/profile', { session: true },handleGetCurrentUser);
+router.get('/profile', handleGetCurrentUser);
 router.get('/profile/:id', handleGetUser);
 router.post('/profile', handleAddUser);
 router.delete('/profile', handleDeleteUser);
