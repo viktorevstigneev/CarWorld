@@ -21,7 +21,7 @@ const handleGetCurrentUser = async (req, res) => {
 
 		res.status(HttpStatusCode.OK).send(result);
 	} catch (error) {
-		res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).send(error);
+		res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).send(`${error} dfkndjfnd`);
 	}
 };
 
